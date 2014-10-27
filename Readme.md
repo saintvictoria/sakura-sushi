@@ -21,3 +21,6 @@ This project is fictional. There is no real client. Any similarity is purely a c
 
 
 ## Other Resources
+
+We used underscore.js and handlebars.js and jquery and js.
+This page took all of our work, and we all learnt a lot.
