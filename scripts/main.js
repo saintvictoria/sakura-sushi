@@ -28,10 +28,10 @@ var flickrUrl = 'https://api.flickr.com/services/rest/?'+
 		'&nojsoncallback=1'
 		;
 
+//http://private-2d011-restaurantapi.apiary-mock.com/menu
+var menuUrl = 'http://private-2d011-restaurantapi.apiary-mock.com/menu';
 
-var menuUrl = 'http://private-anon-6e99440bf-restaurantapi.apiary-mock.com/menu';
-
-var newsUrl ='http://private-anon-6e99440bf-restaurantapi.apiary-mock.com/news/latest';
+var newsUrl ='http://private-2d011-restaurantapi.apiary-mock.com/news/latest';
 
 var specialsUrl = 'http://private-anon-6e99440bf-restaurantapi.apiary-mock.com/menu/special';
 
@@ -54,7 +54,7 @@ bee.forEach(function(photo_info){
 
 
 var newsTemplate = $('#news_box').html();
-var show = _.template(newsTemplate);
+var show = Handlebars.compile(newsTemplate);
 $.getJSON(newsUrl).done(function (pulling) {
     $('.header-box-one').append(show(pulling));
 });
@@ -87,15 +87,10 @@ $.getJSON(menuUrl).done(function(pull) {
      $('.header-box-two').append(rend(fooditem));
     });
 
-    /*
-    _.filter(allmenu, function(food){
-      return specialID === food.id
-    });
-    */
-
   });
 
 });
+
 
 
 
